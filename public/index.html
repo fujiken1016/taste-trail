@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Taste Trail</title>
+<style>
+:root{--bg:#fbfaf7;--fg:#1c1b19;--mut:#5f5b54;--ac:#1d4ed8;--card:#fff;--bd:#dcd8cf}
+@media(prefers-color-scheme:dark){:root{--bg:#161512;--fg:#f1eee8;--mut:#b2ada2;--ac:#8fb0ff;--card:#201f1b;--bd:#3a372f}}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,sans-serif}
+main{max-width:640px;margin:0 auto;padding:24px 16px}
+input,select,button{font:inherit;min-height:48px;padding:0 12px;border:1px solid var(--bd);border-radius:8px;background:var(--card);color:var(--fg);width:100%;box-sizing:border-box;margin:6px 0}
+button{background:var(--ac);color:#fff;border:0;font-weight:600}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:16px;margin:12px 0}
+small,.mut{color:var(--mut)}
+</style></head><body><main>
+<h1>Taste Trail</h1>
+<p class="mut">Tell us what you love. We build a 7-day Japanese immersion trail from media that matches your taste.</p>
+<form id="f"><label>Favorite 1<input name="f" required></label><label>Favorite 2<input name="f"></label><label>Favorite 3<input name="f"></label>
+<label>Japanese level<select name="level"><option>beginner</option><option>intermediate</option><option>advanced</option></select></label>
+<button>Build my trail</button></form><div id="out" aria-live="polite"></div>
+<p><small>Qloo results are aggregate affinities, not facts about you. Level fit is our own heuristic.</small></p>
+<script>
+const out=document.getElementById("out");
+document.getElementById("f").onsubmit=async e=>{e.preventDefault();const d=new FormData(e.target);
+ const favorites=d.getAll("f").filter(Boolean).map(name=>({name}));out.textContent="Working...";
+ const r=await fetch("/api/trail",{method:"POST",body:JSON.stringify({favorites,level:d.get("level")})});const j=await r.json();
+ if(j.error){out.textContent=j.error;return}
+ out.replaceChildren(...j.trail.map(t=>{const c=document.createElement("div");c.className="card";
+  const h=document.createElement("strong");h.textContent=`Day ${t.day}: ${t.title} (${t.type})`;
+  const p=document.createElement("p");p.textContent=t.task;
+  const w=document.createElement("small");w.textContent=`${t.why.qloo}. Shared taste: ${t.why.sharedTaste.join(", ")||"-"}`;
+  c.append(h,p,w);return c}));};
+</script></main></body></html>
