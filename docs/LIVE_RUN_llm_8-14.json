@@ -1,0 +1,142 @@
+{
+ "mode": "llm",
+ "date": "2026-10-19",
+ "cases": 7,
+ "ok": 6,
+ "successRate": 0.86,
+ "medianSeconds": 30.7,
+ "totalMinutes": 3.5,
+ "results": [
+  {
+   "case": 8,
+   "favorites": [
+    "Demon Slayer",
+    "Minecraft (game)",
+    "Billie Eilish"
+   ],
+   "level": "intermediate",
+   "planner": "claude",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 3,
+   "replans": 5,
+   "llmFallback": false,
+   "sample_plan": "Intermediate learner with anime, game and music favorites: query all five domains so the trail mixes easy anime/games with harder film and book picks. [planner: claude]",
+   "seconds": 29.9
+  },
+  {
+   "case": 9,
+   "favorites": [
+    "Your Name",
+    "Animal Crossing (game)",
+    "Yoasobi"
+   ],
+   "level": "advanced",
+   "planner": "claude",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 2,
+   "replans": 0,
+   "llmFallback": false,
+   "sample_plan": "Advanced learner who loves Your Name, Animal Crossing and Yoasobi: query all five domains, since novels and dramas suit advanced reading and listening alike. [planner: claude]",
+   "seconds": 20.9
+  },
+  {
+   "case": 10,
+   "favorites": [
+    "Death Note",
+    "Metal Gear Solid (game)",
+    "Nirvana"
+   ],
+   "level": "beginner",
+   "planner": "claude",
+   "ok": false,
+   "days": 7,
+   "domains": 4,
+   "stretchLeft": 1,
+   "checks": 3,
+   "replans": 5,
+   "llmFallback": true,
+   "sample_plan": "Beginner with anime, game and music favorites: query TV shows, movies, games and artists for accessible immersion; drop books as mostly hard prose. [planner: claude]",
+   "seconds": 32.3
+  },
+  {
+   "case": 11,
+   "favorites": [
+    "Friends",
+    "The Sims (game)",
+    "Adele"
+   ],
+   "level": "intermediate",
+   "planner": "claude",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 3,
+   "replans": 8,
+   "llmFallback": false,
+   "sample_plan": "Intermediate learner with TV, game and pop-music favorites: query all five domains, since Japan-lens TV, film, games, artists and books each offer accessible entry points. [planner: claude]",
+   "seconds": 30.7
+  },
+  {
+   "case": 12,
+   "favorites": [
+    "One Piece",
+    "Pokemon (game)"
+   ],
+   "level": "advanced",
+   "planner": "claude",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 3,
+   "replans": 6,
+   "llmFallback": false,
+   "sample_plan": "Advanced learner with anime and game favorites: query all five domains, since a wide Japan-lens spread gives the richest immersion material across tv, film, games, music and books. [planner: claude]",
+   "seconds": 35.8
+  },
+  {
+   "case": 13,
+   "favorites": [
+    "Stranger Things",
+    "Hollow Knight (game)",
+    "Arctic Monkeys"
+   ],
+   "level": "beginner",
+   "planner": "claude",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 3,
+   "replans": 2,
+   "llmFallback": false,
+   "sample_plan": "Beginner learner with TV, game, and music favorites: query all five domains, since each gives a different Japan-lens entry point and none is excluded. Books will be flagged as harder. [planner: claude",
+   "seconds": 32.8
+  },
+  {
+   "case": 14,
+   "favorites": [
+    "Haruki Murakami (book)",
+    "Lo-fi"
+   ],
+   "level": "intermediate",
+   "planner": "claude",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 3,
+   "replans": 4,
+   "llmFallback": true,
+   "sample_plan": "Query all five domains with a Japan lens: Murakami and lo-fi suggest calm, literary, atmospheric tastes, and an intermediate learner can handle books alongside easier TV, film, games, and music. [plan",
+   "seconds": 28.8
+  }
+ ]
+}

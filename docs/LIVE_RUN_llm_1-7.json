@@ -1,0 +1,140 @@
+{
+ "mode": "llm",
+ "date": "2026-10-19",
+ "cases": 7,
+ "ok": 6,
+ "successRate": 0.86,
+ "medianSeconds": 30.9,
+ "totalMinutes": 3.5,
+ "results": [
+  {
+   "case": 1,
+   "favorites": [
+    "Cowboy Bebop",
+    "Hades (game)",
+    "Radiohead"
+   ],
+   "level": "beginner",
+   "planner": "claude",
+   "ok": false,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 1,
+   "checks": 3,
+   "replans": 5,
+   "llmFallback": false,
+   "sample_plan": "Beginner learner with anime, game and music favorites: query all five domains, since Japan-lens books can still surface manga and light reading, and the level-fit step will sort difficulty afterward. ",
+   "seconds": 36.5
+  },
+  {
+   "case": 2,
+   "favorites": [
+    "Spirited Away",
+    "Zelda (game)",
+    "Kendrick Lamar"
+   ],
+   "level": "intermediate",
+   "planner": "claude",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 3,
+   "replans": 8,
+   "llmFallback": false,
+   "sample_plan": "Intermediate learner with visual, game, and music tastes; query all five domains, since each offers accessible Japanese entry points through the Japan lens. [planner: claude]",
+   "seconds": 32.3
+  },
+  {
+   "case": 3,
+   "favorites": [
+    "Attack on Titan",
+    "Dark Souls (game)"
+   ],
+   "level": "advanced",
+   "planner": "claude",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 3,
+   "replans": 7,
+   "llmFallback": false,
+   "sample_plan": "Advanced learner with dark-fantasy favorites: query all five domains, since advanced level handles dense prose and books like dark manga and novels fit the Attack on Titan and Dark Souls taste. [plann",
+   "seconds": 25.6
+  },
+  {
+   "case": 4,
+   "favorites": [
+    "Studio Ghibli"
+   ],
+   "level": "beginner",
+   "planner": "claude",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 2,
+   "replans": 5,
+   "llmFallback": false,
+   "sample_plan": "Studio Ghibli suits a beginner: query all five domains with a Japan lens, then pick gentle, visual, dialogue-light entries over dense prose. [planner: claude]",
+   "seconds": 27.5
+  },
+  {
+   "case": 5,
+   "favorites": [
+    "The Office",
+    "Stardew Valley (game)",
+    "Taylor Swift"
+   ],
+   "level": "intermediate",
+   "planner": "claude",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 3,
+   "replans": 4,
+   "llmFallback": false,
+   "sample_plan": "Intermediate learner with TV, game and pop-music favorites: query all five domains, since books can still offer accessible slice-of-life picks. [planner: claude]",
+   "seconds": 30.9
+  },
+  {
+   "case": 6,
+   "favorites": [
+    "Breaking Bad",
+    "Taylor Swift"
+   ],
+   "level": "advanced",
+   "planner": "claude",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 3,
+   "replans": 5,
+   "llmFallback": false,
+   "sample_plan": "Advanced learner who likes Breaking Bad and Taylor Swift: query all five domains, since TV, music, film, games and books all offer authentic Japanese material at advanced level. [planner: claude]",
+   "seconds": 28.1
+  },
+  {
+   "case": 7,
+   "favorites": [
+    "Naruto",
+    "Persona 5 (game)",
+    "Daft Punk"
+   ],
+   "level": "beginner",
+   "planner": "claude",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 3,
+   "replans": 6,
+   "llmFallback": true,
+   "sample_plan": "Beginner learner: query all five domains with the Japan lens, since anime, games and music match the favorites, while books are kept as a lighter, optional layer. [planner: claude]",
+   "seconds": 31.9
+  }
+ ]
+}

@@ -1,0 +1,124 @@
+{
+ "mode": "llm",
+ "date": "2026-10-19",
+ "cases": 6,
+ "ok": 6,
+ "successRate": 1,
+ "medianSeconds": 34.5,
+ "totalMinutes": 3.4,
+ "results": [
+  {
+   "case": 15,
+   "favorites": [
+    "Game of Thrones",
+    "Elden Ring (game)",
+    "Hans Zimmer"
+   ],
+   "level": "advanced",
+   "planner": "claude",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 3,
+   "replans": 10,
+   "llmFallback": false,
+   "sample_plan": "Advanced learner who loves epic fantasy and cinematic scores, so I'll query all five domains, including books, since advanced readers can handle dense prose. [planner: claude]",
+   "seconds": 34.4
+  },
+  {
+   "case": 16,
+   "favorites": [
+    "Terrace House",
+    "Mario Kart (game)",
+    "BTS"
+   ],
+   "level": "beginner",
+   "planner": "claude",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 3,
+   "replans": 2,
+   "llmFallback": false,
+   "sample_plan": "Beginner with TV, game and music favorites: query all five domains for broad coverage, keeping books in but weighted lightly since prose is hard for a beginner. [planner: claude]",
+   "seconds": 33.6
+  },
+  {
+   "case": 17,
+   "favorites": [
+    "Fullmetal Alchemist",
+    "Final Fantasy VII (game)",
+    "Queen"
+   ],
+   "level": "intermediate",
+   "planner": "claude",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 3,
+   "replans": 6,
+   "llmFallback": false,
+   "sample_plan": "Ask all five domains with a Japan lens: anime, games and music anchor the favorites, while movies and books give intermediate-level variety. [planner: claude]",
+   "seconds": 34.5
+  },
+  {
+   "case": 18,
+   "favorites": [
+    "Harry Potter",
+    "Minecraft (game)",
+    "Ed Sheeran"
+   ],
+   "level": "advanced",
+   "planner": "claude",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 3,
+   "replans": 6,
+   "llmFallback": false,
+   "sample_plan": "Advanced learner with Harry Potter, Minecraft, and Ed Sheeran favorites: query all five domains, since books and TV suit advanced reading and listening, and games and music add casual immersion. [plan",
+   "seconds": 35
+  },
+  {
+   "case": 19,
+   "favorites": [
+    "Neon Genesis Evangelion",
+    "Celeste (game)",
+    "Aphex Twin"
+   ],
+   "level": "beginner",
+   "planner": "claude",
+   "ok": true,
+   "days": 7,
+   "domains": 4,
+   "stretchLeft": 0,
+   "checks": 3,
+   "replans": 5,
+   "llmFallback": true,
+   "sample_plan": "Beginner learner: anime, game, music and film give accessible Japanese audio, while books are mostly hard prose, so drop books and query the other four. [planner: claude]",
+   "seconds": 34.9
+  },
+  {
+   "case": 20,
+   "favorites": [
+    "asdfqwer zzzz",
+    "Cowboy Bebop"
+   ],
+   "level": "intermediate",
+   "planner": "claude",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 3,
+   "replans": 7,
+   "llmFallback": false,
+   "sample_plan": "Intermediate learner; Cowboy Bebop anchors anime/music taste, so query all five Japan-lensed domains and let the unrecognized favorite fall back to Bebop-driven signals. [planner: claude]",
+   "seconds": 34.2
+  }
+ ]
+}

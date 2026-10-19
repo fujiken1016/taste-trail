@@ -15,7 +15,8 @@ const CASES = [
 ];
 const LV = ["beginner", "intermediate", "advanced"];
 const res = []; const t00 = Date.now();
-for (let i = 0; i < CASES.length; i++) {
+const [A, B] = (process.env.RANGE || `1-${CASES.length}`).split("-").map(Number);
+for (let i = A - 1; i < B; i++) {
   const level = LV[i % 3]; const favorites = CASES[i].map((name) => ({ name }));
   const t0 = Date.now(); const client = makeClient(process.env);
   const row = { case: i + 1, favorites: CASES[i], level, planner: planner.name };
@@ -32,5 +33,5 @@ for (let i = 0; i < CASES.length; i++) {
 }
 const okN = res.filter((r) => r.ok).length;
 const summary = { mode, date: new Date().toISOString().slice(0, 10), cases: res.length, ok: okN, successRate: +(okN / res.length).toFixed(2), medianSeconds: res.map((r) => r.seconds).sort((a, b) => a - b)[Math.floor(res.length / 2)], totalMinutes: +((Date.now() - t00) / 60000).toFixed(1), results: res };
-fs.writeFileSync(new URL(`../docs/LIVE_RUN_${mode}.json`, import.meta.url), JSON.stringify(summary, null, 1));
+fs.writeFileSync(new URL(`../docs/LIVE_RUN_${mode}${process.env.RANGE ? "_" + process.env.RANGE : ""}.json`, import.meta.url), JSON.stringify(summary, null, 1));
 console.log("SUMMARY", mode, okN + "/" + res.length);
