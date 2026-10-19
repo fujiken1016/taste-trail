@@ -22,18 +22,28 @@ export function normalizeEntity(e) {
 }
 
 export function liveClient(apiKey, fetchImpl = fetch, base = DEFAULT_BASE) {
+  // Qloo answers 429 when requests burst, so: at most 3 in flight, and one retry after a pause on 429.
+  let busy = 0; const waiting = [];
+  const slot = async () => { if (busy >= 3) await new Promise((r) => waiting.push(r)); busy++; };
+  const free = () => { busy--; waiting.shift()?.(); };
   const get = async (path, params) => {
     const url = new URL(path, base);
     for (const [k, v] of Object.entries(params)) if (v != null) url.searchParams.set(k, v);
-    const res = await fetchImpl(url, { headers: { "X-Api-Key": apiKey } }); // header, not Bearer, not query
-    if (!res.ok) throw new Error(`Qloo ${res.status} on ${path}`); // no silent fallback
-    return res.json();
+    await slot();
+    try {
+      for (let attempt = 0; ; attempt++) {
+        const res = await fetchImpl(url, { headers: { "X-Api-Key": apiKey } }); // header, not Bearer, not query
+        if (res.status === 429 && attempt < 2) { await new Promise((r) => setTimeout(r, 700 * (attempt + 1))); continue; }
+        if (!res.ok) throw new Error(`Qloo ${res.status} on ${path}`); // no silent fallback
+        return await res.json();
+      }
+    } finally { free(); }
   };
   return {
     mode: "live",
     async search(query, type) {
       const j = await get("/search", { query, types: type, take: 5 });
-      return (j.results || []).filter((r) => (r.types || []).some((t) => SEED_TYPES.has(t))).map(normalizeEntity);
+      return (j.results || []).filter((r) => (r.types || []).some((t) => SEED_TYPES.has(t))).sort((a, b) => (b.popularity ?? 0) - (a.popularity ?? 0)).map(normalizeEntity);
     },
     async insights({ type, seedIds, take = 8, params = {} }) {
       const j = await get("/v2/insights", {
@@ -69,6 +79,9 @@ export function mockClient() {
   };
 }
 
+// Returns null when no key is set: callers must show "preparing", never a mock result as if it were live.
+// Mock is opt-in for local development and tests only (TASTE_TRAIL_MOCK=1).
 export function makeClient(env = {}) {
-  return env.QLOO_API_KEY ? liveClient(env.QLOO_API_KEY, fetch, env.QLOO_BASE_URL || DEFAULT_BASE) : mockClient();
+  if (env.QLOO_API_KEY) return liveClient(env.QLOO_API_KEY, fetch, env.QLOO_BASE_URL || DEFAULT_BASE);
+  return env.TASTE_TRAIL_MOCK === "1" ? mockClient() : null;
 }

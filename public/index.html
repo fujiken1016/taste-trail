@@ -1,33 +1,63 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Taste Trail</title>
+<title>Taste Trail: a 7-day Japanese trail from your favorites</title>
+<meta name="description" content="Your favorite shows pick your Japanese homework. A 7-day immersion trail built from Qloo taste data, with a separate level-fit check.">
 <style>
-:root{--bg:#fbfaf7;--fg:#1c1b19;--mut:#5f5b54;--ac:#1d4ed8;--card:#fff;--bd:#dcd8cf}
-@media(prefers-color-scheme:dark){:root{--bg:#161512;--fg:#f1eee8;--mut:#b2ada2;--ac:#8fb0ff;--card:#201f1b;--bd:#3a372f}}
+:root{--bg:#fbfaf7;--fg:#1c1b19;--mut:#5f5b54;--ac:#1d4ed8;--card:#fff;--bd:#dcd8cf;--q:#1d4ed8;--qbg:#eef3ff;--l:#8a4b08;--lbg:#fff4e0;--ok:#166534;--warn:#9a3412}
+@media(prefers-color-scheme:dark){:root{--bg:#161512;--fg:#f1eee8;--mut:#b2ada2;--ac:#8fb0ff;--card:#201f1b;--bd:#3a372f;--q:#a9c2ff;--qbg:#1b2540;--l:#f2b872;--lbg:#33260f;--ok:#86efac;--warn:#fdba74}}
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,sans-serif}
-main{max-width:640px;margin:0 auto;padding:24px 16px}
+main{max-width:680px;margin:0 auto;padding:24px 16px}
+h1{margin:0 0 4px}
 input,select,button{font:inherit;min-height:48px;padding:0 12px;border:1px solid var(--bd);border-radius:8px;background:var(--card);color:var(--fg);width:100%;box-sizing:border-box;margin:6px 0}
-button{background:var(--ac);color:#fff;border:0;font-weight:600}
-.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:16px;margin:12px 0}
-small,.mut{color:var(--mut)}
-#mode{display:none;border:2px solid #b45309;background:var(--card);border-radius:12px;padding:12px 16px;margin:0 0 16px}
+button{background:var(--ac);color:#fff;border:0;font-weight:600;cursor:pointer}button[disabled]{opacity:.6}
+button.ghost{background:transparent;color:var(--ac);border:1px solid var(--bd);font-weight:500}
+label{display:block;font-size:14px;color:var(--mut)}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:16px;margin:14px 0}
+.card h3{margin:0 0 2px;font-size:18px}.goal{color:var(--mut);font-size:14px;margin:0 0 8px}
+.box{border-radius:8px;padding:10px 12px;margin:8px 0;font-size:14px;line-height:1.5}
+.q{background:var(--qbg);border-left:4px solid var(--q)}.l{background:var(--lbg);border-left:4px solid var(--l)}
+.box b.t{display:block;font-size:12px;letter-spacing:.04em;text-transform:uppercase;margin-bottom:2px}.q b.t{color:var(--q)}.l b.t{color:var(--l)}
+.chip{display:inline-block;border:1px solid var(--bd);border-radius:99px;padding:0 10px;margin:2px 4px 2px 0;font-size:13px;background:var(--card)}
+.bar{height:6px;background:var(--bd);border-radius:3px;margin:4px 0}.bar i{display:block;height:6px;border-radius:3px;background:var(--q)}
+.v-fits{color:var(--ok)}.v-stretch{color:var(--warn)}
+.mut,small{color:var(--mut)}
+.done{display:flex;align-items:center;gap:10px;min-height:48px;font-size:15px}.done input{width:24px;min-height:24px;margin:0}
+details{margin:16px 0}summary{cursor:pointer;min-height:48px;display:flex;align-items:center;font-weight:600}
+.step{display:flex;gap:10px;font-size:14px;margin:6px 0}.ph{flex:none;width:62px;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.04em;padding-top:2px}
+.ph.Plan{color:var(--q)}.ph.Act{color:var(--ok)}.ph.Check{color:var(--l)}.ph.Replan{color:var(--warn)}
+#prep{display:none}
 </style></head><body><main>
-<div id="mode" role="note"><strong>Demo data, not live Qloo.</strong> This build runs on invented titles and scores so the flow can be tried. Real Qloo results appear here once a hackathon API key is connected.</div>
 <h1>Taste Trail</h1>
-<p class="mut">Tell us what you love. We build a 7-day Japanese immersion trail from media that matches your taste.</p>
-<form id="f"><label>Favorite 1<input name="f" required></label><label>Favorite 2<input name="f"></label><label>Favorite 3<input name="f"></label>
+<p class="mut">Tell us what you love. We build a 7-day Japanese immersion trail from media that matches your taste, and check each pick against your level.</p>
+<div id="prep" class="card" role="status"><strong>Getting ready.</strong> Live Qloo data is being connected to this demo, so it is switched off for now rather than showing made-up results. The code is open source: <a href="https://github.com/fujiken1016/taste-trail">github.com/fujiken1016/taste-trail</a></div>
+<div id="app"><form id="f"><label>Favorite 1<input name="f" required maxlength="80" autocomplete="off"></label><label>Favorite 2<input name="f" maxlength="80" autocomplete="off"></label><label>Favorite 3<input name="f" maxlength="80" autocomplete="off"></label>
+<small>Tip: add (game), (show), (film), (music) or (book) after a name if it is ambiguous, e.g. Hades (game).</small>
 <label>Japanese level<select name="level"><option>beginner</option><option>intermediate</option><option>advanced</option></select></label>
-<button>Build my trail</button></form><div id="out" aria-live="polite"></div>
-<p><small>Qloo results are aggregate affinities, not facts about you. Level fit is our own heuristic.</small></p>
+<button id="go">Build my trail</button><button type="button" class="ghost" id="try">Try an example: Cowboy Bebop, Hades (game), Radiohead</button></form>
+<div id="out" aria-live="polite"></div></div>
+<p><small>Qloo results are aggregate taste affinities, not facts about you. The level rule is our own heuristic, shown separately.</small></p>
 <script>
-const out=document.getElementById("out");
-fetch("/api/mode").then(r=>r.json()).then(j=>{if(j.mode!=="live")document.getElementById("mode").style.display="block"}).catch(()=>{document.getElementById("mode").style.display="block"});
-document.getElementById("f").onsubmit=async e=>{e.preventDefault();const d=new FormData(e.target);
- const favorites=d.getAll("f").filter(Boolean).map(name=>({name}));out.textContent="Working...";
- const r=await fetch("/api/trail",{method:"POST",body:JSON.stringify({favorites,level:d.get("level")})});const j=await r.json();
- if(j.error){out.textContent=j.error;return}
- out.replaceChildren(...j.trail.map(t=>{const c=document.createElement("div");c.className="card";
-  const h=document.createElement("strong");h.textContent=`Day ${t.day}: ${t.title} (${t.type})`;
-  const p=document.createElement("p");p.textContent=t.task;
-  const w=document.createElement("small");w.textContent=`${j.mode==="live"?"":"[mock] "}${t.why.qloo}. Shared taste: ${t.why.sharedTaste.join(", ")||"-"}${t.why.drivenBy?`. Pulled most by: ${t.why.drivenBy}`:""}`;
-  c.append(h,p,w);return c}));};
+const $=id=>document.getElementById(id), out=$("out");
+const el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
+fetch("/api/mode").then(r=>r.json()).then(j=>{if(j.mode==="unavailable"){$("prep").style.display="block";$("app").style.display="none"}}).catch(()=>{});
+$("try").onclick=()=>{const v=["Cowboy Bebop","Hades (game)","Radiohead"];document.querySelectorAll("input[name=f]").forEach((i,k)=>i.value=v[k]||"");$("f").requestSubmit()};
+const VERD={fits:["Fits your level","v-fits"],stretch:["A stretch for your level","v-stretch"],easy:["Gentle for your level (good review)","v-fits"],none:["No language signal in its tags","mut"]};
+let timer;function progress(){const m=["Resolving your favorites with Qloo...","Asking Qloo about shows, films, games, music and manga...","Checking level fit and replanning...","Building your 7 days..."];let i=0;out.textContent=m[0];timer=setInterval(()=>{i=Math.min(i+1,m.length-1);out.textContent=m[i]},1400)}
+$("f").onsubmit=async e=>{e.preventDefault();const d=new FormData(e.target);const favorites=d.getAll("f").map(s=>s.trim()).filter(Boolean).map(name=>({name}));
+ $("go").disabled=true;progress();let j,ok=false;
+ try{const r=await fetch("/api/trail",{method:"POST",body:JSON.stringify({favorites,level:d.get("level")})});ok=r.ok;j=await r.json()}catch{j={message:"Network problem. Please try again."}}
+ clearInterval(timer);$("go").disabled=false;
+ if(!ok){out.textContent=j.message||"Something went wrong. Please try again.";return}
+ const key="tt:"+JSON.stringify(favorites)+d.get("level");let done={};try{done=JSON.parse(localStorage.getItem(key)||"{}")}catch{}
+ const nodes=j.trail.map(t=>{const c=el("div","card");c.append(el("h3","",`Day ${t.day}: ${t.title}`),el("p","goal",`${t.typeLabel} · Goal: ${t.goal}`),el("p","",t.task));
+  const q=el("div","box q");q.append(el("b","t","Qloo says"));
+  if(t.qloo.affinity!=null){q.append(el("span","",`Taste affinity ${t.qloo.affinity.toFixed(2)} (0 to 1)`));const b=el("div","bar");const i=el("i");i.style.width=Math.round(t.qloo.affinity*100)+"%";b.append(i);q.append(b)}
+  if(t.qloo.drivenBy)q.append(el("div","",`Pulled most by your favorite: ${t.qloo.drivenBy}`));
+  const sh=el("div");sh.append(el("small","","Shared taste: "));(t.qloo.sharedTaste.length?t.qloo.sharedTaste:["none shared"]).forEach(x=>sh.append(el("span","chip",x)));q.append(sh);
+  const l=el("div","box l");l.append(el("b","t","Our level rule says"));const [vt,vc]=VERD[t.level.verdict]||VERD.none;l.append(el("strong",vc,vt));
+  if(t.level.easy.length||t.level.hard.length){const s=el("div");t.level.easy.forEach(x=>s.append(el("span","chip","easier: "+x)));t.level.hard.forEach(x=>s.append(el("span","chip","harder: "+x)));l.append(s)}
+  const lab=el("label","done");const cb=el("input");cb.type="checkbox";cb.checked=!!done[t.day];cb.onchange=()=>{done[t.day]=cb.checked;try{localStorage.setItem(key,JSON.stringify(done))}catch{}};lab.append(cb,"Done");
+  c.append(q,l,lab);return c});
+ const det=el("details");det.open=true;det.append(el("summary","","How the agent decided (Plan, Act, Check, Replan)"));
+ j.history.forEach(h=>{const s=el("div","step");s.append(el("span","ph "+h.phase,h.phase),el("span","",h.text));det.append(s)});
+ out.replaceChildren(det,...nodes);};
 </script></main></body></html>

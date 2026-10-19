@@ -1,0 +1,384 @@
+{
+ "mode": "rules",
+ "date": "2026-10-19",
+ "cases": 20,
+ "ok": 20,
+ "successRate": 1,
+ "medianSeconds": 2.4,
+ "totalMinutes": 0.9,
+ "results": [
+  {
+   "case": 1,
+   "favorites": [
+    "Cowboy Bebop",
+    "Hades (game)",
+    "Radiohead"
+   ],
+   "level": "beginner",
+   "planner": "rules",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 3,
+   "replans": 3,
+   "llmFallback": false,
+   "sample_plan": "Resolve 3 favorite(s), ask 5 domains in parallel through a Japan lens, then check level fit (beginner) and diversity. [planner: rules]",
+   "seconds": 3.3
+  },
+  {
+   "case": 2,
+   "favorites": [
+    "Spirited Away",
+    "Zelda (game)",
+    "Kendrick Lamar"
+   ],
+   "level": "intermediate",
+   "planner": "rules",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 2,
+   "replans": 0,
+   "llmFallback": false,
+   "sample_plan": "Resolve 3 favorite(s), ask 5 domains in parallel through a Japan lens, then check level fit (intermediate) and diversity. [planner: rules]",
+   "seconds": 2.8
+  },
+  {
+   "case": 3,
+   "favorites": [
+    "Attack on Titan",
+    "Dark Souls (game)"
+   ],
+   "level": "advanced",
+   "planner": "rules",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 2,
+   "replans": 0,
+   "llmFallback": false,
+   "sample_plan": "Resolve 2 favorite(s), ask 5 domains in parallel through a Japan lens, then check level fit (advanced) and diversity. [planner: rules]",
+   "seconds": 2.1
+  },
+  {
+   "case": 4,
+   "favorites": [
+    "Studio Ghibli"
+   ],
+   "level": "beginner",
+   "planner": "rules",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 2,
+   "replans": 3,
+   "llmFallback": false,
+   "sample_plan": "Resolve 1 favorite(s), ask 5 domains in parallel through a Japan lens, then check level fit (beginner) and diversity. [planner: rules]",
+   "seconds": 1.6
+  },
+  {
+   "case": 5,
+   "favorites": [
+    "The Office",
+    "Stardew Valley (game)",
+    "Taylor Swift"
+   ],
+   "level": "intermediate",
+   "planner": "rules",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 3,
+   "replans": 2,
+   "llmFallback": false,
+   "sample_plan": "Resolve 3 favorite(s), ask 5 domains in parallel through a Japan lens, then check level fit (intermediate) and diversity. [planner: rules]",
+   "seconds": 3.4
+  },
+  {
+   "case": 6,
+   "favorites": [
+    "Breaking Bad",
+    "Taylor Swift"
+   ],
+   "level": "advanced",
+   "planner": "rules",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 3,
+   "replans": 3,
+   "llmFallback": false,
+   "sample_plan": "Resolve 2 favorite(s), ask 5 domains in parallel through a Japan lens, then check level fit (advanced) and diversity. [planner: rules]",
+   "seconds": 3.5
+  },
+  {
+   "case": 7,
+   "favorites": [
+    "Naruto",
+    "Persona 5 (game)",
+    "Daft Punk"
+   ],
+   "level": "beginner",
+   "planner": "rules",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 3,
+   "replans": 4,
+   "llmFallback": false,
+   "sample_plan": "Resolve 3 favorite(s), ask 5 domains in parallel through a Japan lens, then check level fit (beginner) and diversity. [planner: rules]",
+   "seconds": 1.9
+  },
+  {
+   "case": 8,
+   "favorites": [
+    "Demon Slayer",
+    "Minecraft (game)",
+    "Billie Eilish"
+   ],
+   "level": "intermediate",
+   "planner": "rules",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 3,
+   "replans": 1,
+   "llmFallback": false,
+   "sample_plan": "Resolve 3 favorite(s), ask 5 domains in parallel through a Japan lens, then check level fit (intermediate) and diversity. [planner: rules]",
+   "seconds": 2.1
+  },
+  {
+   "case": 9,
+   "favorites": [
+    "Your Name",
+    "Animal Crossing (game)",
+    "Yoasobi"
+   ],
+   "level": "advanced",
+   "planner": "rules",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 2,
+   "replans": 0,
+   "llmFallback": false,
+   "sample_plan": "Resolve 3 favorite(s), ask 5 domains in parallel through a Japan lens, then check level fit (advanced) and diversity. [planner: rules]",
+   "seconds": 3.1
+  },
+  {
+   "case": 10,
+   "favorites": [
+    "Death Note",
+    "Metal Gear Solid (game)",
+    "Nirvana"
+   ],
+   "level": "beginner",
+   "planner": "rules",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 3,
+   "replans": 3,
+   "llmFallback": false,
+   "sample_plan": "Resolve 3 favorite(s), ask 5 domains in parallel through a Japan lens, then check level fit (beginner) and diversity. [planner: rules]",
+   "seconds": 2
+  },
+  {
+   "case": 11,
+   "favorites": [
+    "Friends",
+    "The Sims (game)",
+    "Adele"
+   ],
+   "level": "intermediate",
+   "planner": "rules",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 3,
+   "replans": 1,
+   "llmFallback": false,
+   "sample_plan": "Resolve 3 favorite(s), ask 5 domains in parallel through a Japan lens, then check level fit (intermediate) and diversity. [planner: rules]",
+   "seconds": 2.8
+  },
+  {
+   "case": 12,
+   "favorites": [
+    "One Piece",
+    "Pokemon (game)"
+   ],
+   "level": "advanced",
+   "planner": "rules",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 2,
+   "replans": 1,
+   "llmFallback": false,
+   "sample_plan": "Resolve 2 favorite(s), ask 5 domains in parallel through a Japan lens, then check level fit (advanced) and diversity. [planner: rules]",
+   "seconds": 2.4
+  },
+  {
+   "case": 13,
+   "favorites": [
+    "Stranger Things",
+    "Hollow Knight (game)",
+    "Arctic Monkeys"
+   ],
+   "level": "beginner",
+   "planner": "rules",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 3,
+   "replans": 1,
+   "llmFallback": false,
+   "sample_plan": "Resolve 3 favorite(s), ask 5 domains in parallel through a Japan lens, then check level fit (beginner) and diversity. [planner: rules]",
+   "seconds": 2.7
+  },
+  {
+   "case": 14,
+   "favorites": [
+    "Haruki Murakami (book)",
+    "Lo-fi"
+   ],
+   "level": "intermediate",
+   "planner": "rules",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 3,
+   "replans": 2,
+   "llmFallback": false,
+   "sample_plan": "Resolve 2 favorite(s), ask 5 domains in parallel through a Japan lens, then check level fit (intermediate) and diversity. [planner: rules]",
+   "seconds": 2.2
+  },
+  {
+   "case": 15,
+   "favorites": [
+    "Game of Thrones",
+    "Elden Ring (game)",
+    "Hans Zimmer"
+   ],
+   "level": "advanced",
+   "planner": "rules",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 2,
+   "replans": 1,
+   "llmFallback": false,
+   "sample_plan": "Resolve 3 favorite(s), ask 5 domains in parallel through a Japan lens, then check level fit (advanced) and diversity. [planner: rules]",
+   "seconds": 2.2
+  },
+  {
+   "case": 16,
+   "favorites": [
+    "Terrace House",
+    "Mario Kart (game)",
+    "BTS"
+   ],
+   "level": "beginner",
+   "planner": "rules",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 2,
+   "replans": 0,
+   "llmFallback": false,
+   "sample_plan": "Resolve 3 favorite(s), ask 5 domains in parallel through a Japan lens, then check level fit (beginner) and diversity. [planner: rules]",
+   "seconds": 2.2
+  },
+  {
+   "case": 17,
+   "favorites": [
+    "Fullmetal Alchemist",
+    "Final Fantasy VII (game)",
+    "Queen"
+   ],
+   "level": "intermediate",
+   "planner": "rules",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 2,
+   "replans": 1,
+   "llmFallback": false,
+   "sample_plan": "Resolve 3 favorite(s), ask 5 domains in parallel through a Japan lens, then check level fit (intermediate) and diversity. [planner: rules]",
+   "seconds": 3
+  },
+  {
+   "case": 18,
+   "favorites": [
+    "Harry Potter",
+    "Minecraft (game)",
+    "Ed Sheeran"
+   ],
+   "level": "advanced",
+   "planner": "rules",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 3,
+   "replans": 2,
+   "llmFallback": false,
+   "sample_plan": "Resolve 3 favorite(s), ask 5 domains in parallel through a Japan lens, then check level fit (advanced) and diversity. [planner: rules]",
+   "seconds": 3.7
+  },
+  {
+   "case": 19,
+   "favorites": [
+    "Neon Genesis Evangelion",
+    "Celeste (game)",
+    "Aphex Twin"
+   ],
+   "level": "beginner",
+   "planner": "rules",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 3,
+   "replans": 4,
+   "llmFallback": false,
+   "sample_plan": "Resolve 3 favorite(s), ask 5 domains in parallel through a Japan lens, then check level fit (beginner) and diversity. [planner: rules]",
+   "seconds": 2.3
+  },
+  {
+   "case": 20,
+   "favorites": [
+    "asdfqwer zzzz",
+    "Cowboy Bebop"
+   ],
+   "level": "intermediate",
+   "planner": "rules",
+   "ok": true,
+   "days": 7,
+   "domains": 5,
+   "stretchLeft": 0,
+   "checks": 2,
+   "replans": 1,
+   "llmFallback": false,
+   "sample_plan": "Resolve 2 favorite(s), ask 5 domains in parallel through a Japan lens, then check level fit (intermediate) and diversity. [planner: rules]",
+   "seconds": 2
+  }
+ ]
+}
