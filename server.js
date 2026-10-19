@@ -4,6 +4,9 @@ import { readFile } from "node:fs/promises";
 import { makeClient } from "./src/qloo-client.js";
 import { runAgent } from "./src/agent.js";
 
+import { readFileSync } from "node:fs";
+// Local dev: read .env (git-ignored). On Cloudflare the key is a Pages secret instead.
+try { for (const l of readFileSync(new URL("./.env", import.meta.url), "utf8").split("\n")) { const m = l.match(/^([A-Z_]+)=(.*)$/); if (m && !process.env[m[1]]) process.env[m[1]] = m[2]; } } catch {}
 const client = makeClient(process.env);
 const cache = new Map(); // private server-side cache only; never written to the repo
 http.createServer(async (req, res) => {

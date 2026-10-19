@@ -28,6 +28,6 @@ document.getElementById("f").onsubmit=async e=>{e.preventDefault();const d=new F
  out.replaceChildren(...j.trail.map(t=>{const c=document.createElement("div");c.className="card";
   const h=document.createElement("strong");h.textContent=`Day ${t.day}: ${t.title} (${t.type})`;
   const p=document.createElement("p");p.textContent=t.task;
-  const w=document.createElement("small");w.textContent=`${j.mode==="live"?"":"[mock] "}${t.why.qloo}. Shared taste: ${t.why.sharedTaste.join(", ")||"-"}`;
+  const w=document.createElement("small");w.textContent=`${j.mode==="live"?"":"[mock] "}${t.why.qloo}. Shared taste: ${t.why.sharedTaste.join(", ")||"-"}${t.why.drivenBy?`. Pulled most by: ${t.why.drivenBy}`:""}`;
   c.append(h,p,w);return c}));};
 </script></main></body></html>
