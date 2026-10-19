@@ -34,3 +34,12 @@ The key exists only as a server-side secret. There is no silent fallback: a fail
 - Qloo affinity is group-level taste similarity, not a fact about the individual or a causal claim.
 - Level fit is a heuristic over tags, not measured difficulty. Verify with the learner.
 - Response parsing (`normalizeEntity`) was written from the docs and must be verified against live responses.
+
+## Switching from mock to live Qloo (about half a day, once the key arrives)
+1. (5 min) `npx wrangler pages secret put QLOO_API_KEY --project-name taste-trail`, then redeploy (`npx wrangler pages deploy public --project-name taste-trail --branch main`). The "Demo data" banner disappears by itself (it keys off `/api/mode`).
+2. (30 min) Run locally with the key and call `/search` and `/v2/insights` by hand with `curl -H "X-Api-Key: $K" "https://hackathon.api.qloo.com/search?query=..."`. Save the raw JSON **outside the repo** (Qloo terms: no Qloo response data in a public repo).
+3. (1-2 h) Fix `normalizeEntity` in `src/qloo-client.js` to the real shapes (entity id, `types`, `tags`, affinity field, `results.entities`). Then add a **shape-only** fixture test (invented values, real field names).
+4. (1-2 h) Map the EASY/HARD heuristic tags to real Qloo tag ids (`/v2/tags`); keep the heuristic labelled as ours.
+5. (1 h) Check each domain returns results for `filter.type` and fix empty-domain handling; add rate-limit/error display (no silent fallback).
+6. (1 h) Re-record the live-data shots in `VIDEO_SHOTLIST.md` (marked with a star), update the Devpost text lines marked with a star, then resubmit.
+Optional: add an MCP version (`qloo mcp`) for the "agent framework" requirement.

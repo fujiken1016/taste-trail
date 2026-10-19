@@ -14,6 +14,7 @@ http.createServer(async (req, res) => {
       const out = await runAgent(JSON.parse(body), client); cache.set(key, out); if (cache.size > 200) cache.delete(cache.keys().next().value);
       return send(res, 200, out);
     }
+    if (req.method === "GET" && req.url === "/api/mode") return send(res, 200, { mode: client.mode });
     const html = await readFile(new URL("./public/index.html", import.meta.url));
     res.writeHead(200, { "content-type": "text/html; charset=utf-8" }); res.end(html);
   } catch (e) { send(res, 400, { error: String(e.message) }); }
